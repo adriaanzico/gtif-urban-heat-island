@@ -4,9 +4,6 @@ uhi_udp_register.py
 Builds and stores the Urban Heat Island (UHI) User-Defined Process (UDP)
 on the Copernicus OpenEO back-end.
 
-Run this script ONCE to register the process.  After that, use
-uhi_udp_run.py to invoke it with any bounding box and time range.
-
 Usage
 -----
     python uhi_udp_register.py
