@@ -44,12 +44,12 @@
     },
     {
       "rel": "thumbnail",
-      "href": "https://your-domain.org/images/uhi_thumbnail.png",
+      "href": "https://github.com/adriaanzico/gtif-urban-heat-island/blob/main/preview/london_thumbnail.png",
       "type": "image/png"
     },
     {
       "rel": "preview",
-      "href": "https://your-domain.org/images/uhi_preview_london.png",
+      "href": "https://github.com/adriaanzico/gtif-urban-heat-island/blob/main/preview/london_thumbnail.png",
       "type": "image/png"
     },
     {
