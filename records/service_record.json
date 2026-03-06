@@ -66,12 +66,12 @@
     },
     {
       "rel": "about",
-      "href": "https://github.com/your-org/uhi-openeo",
+      "href": "https://github.com/adriaanzico/gtif-urban-heat-island",
       "title": "Algorithm Documentation"
     },
     {
       "rel": "code",
-      "href": "https://github.com/your-org/uhi-openeo",
+      "href": "https://github.com/adriaanzico/gtif-urban-heat-island/blob/main/udp/UHI_udp.py",
       "title": "Source Code"
     },
     {
