@@ -27,7 +27,7 @@ CCI_STAC = (
 CCI_URBAN_CLASS  = 190  # ESA CCI LCCS class for artificial / urban surfaces
 MAX_CLOUD_COVER  = 5    # %
 DEFAULT_KERNEL   = 51   # pixels  (~1.5 km radius at 30 m Landsat resolution)
-UDP_ID           = "uhi_jja"
+UDP_ID           = "UHI_per_pixel"
 
 # JJA intervals are pre-built for this range at registration time.
 # Extend YEAR_RANGE_END if you need to process data beyond 2035.
@@ -162,14 +162,14 @@ def register_udp() -> None:
         ),
     )
 
-    temporal_extent = Parameter(
+    temporal_extent = Parameter.temporal_interval(
         name="temporal_extent",
         description=(
             "Date range over which to compute the JJA mean LST, "
             "e.g. ['2015-01-01', '2024-12-31'].  "
             "All June-August periods within the range are averaged."
         ),
-        schema={"type": "array", "subtype": "temporal-interval"},
+        # schema={"type": "array", "subtype": "temporal-interval"},
         default=["2018-01-01", "2023-12-31"],
     )
 
@@ -212,7 +212,7 @@ def register_udp() -> None:
             "  5. Compute local rural mean LST with a moving-window kernel.\n"
             "  6. UHI = LST_urban - local_rural_mean  (urban pixels only).\n"
         ),
-        public=False,  # set True to share with other users
+        public=True,  # set True to share with other users
     )
 
     print(f"UDP '{UDP_ID}' successfully registered.")

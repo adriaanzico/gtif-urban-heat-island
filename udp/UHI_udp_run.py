@@ -19,37 +19,37 @@ Prerequisites
 import openeo
 
 OPENEO_URL = "https://openeo.dataspace.copernicus.eu/openeo/1.2"
-UDP_ID     = "uhi_jja"
+UDP_ID     = "UHI_per_pixel"
 
 # ---------------------------------------------------------------------------
 # Edit these to define your job
 # ---------------------------------------------------------------------------
-PARAMETERS = {
-    "spatial_extent": {
-        "west":  -0.563,
-        "south": 51.261,
-        "east":   0.280,
-        "north": 51.732,
-        # "crs": "EPSG:4326",  # optional, 4326 is the default
-    },
-    "temporal_extent": ["2020-01-01", "2025-12-31"],
-    "kernel_size": 71,   # optional — uses the UDP default (51)
-    # Note: CCI land cover year is fixed at UDP registration time (default 2018).
-    # To change it, update CCI_YEAR in uhi_udp_register.py and re-register.
-}
+# PARAMETERS = {
+#     "spatial_extent": {
+#         "west":  -0.563,
+#         "south": 51.261,
+#         "east":   0.280,
+#         "north": 51.732,
+#         # "crs": "EPSG:4326",  # optional, 4326 is the default
+#     },
+#     "temporal_extent": ["2020-01-01", "2021-12-31"],
+#     "kernel_size": 71,   # optional — uses the UDP default (51)
+#     # Note: CCI land cover year is fixed at UDP registration time (default 2018).
+#     # To change it, update CCI_YEAR in uhi_udp_register.py and re-register.
+# }
 
-OUTPUT_FILE = r"C:\Users\adriaan.keurhorst\Documents\GTIF\uhi_jja_result_london_71.tif"
-JOB_TITLE   = "UHI_JJA_London_2024_2025"
+OUTPUT_FILE = r"C:\Users\adriaan.keurhorst\Documents\GTIF\uhi_jja_result_torino.tif"
+JOB_TITLE   = "UHI_JJA_torino"
 
 # Uncomment for other cities:
 # PARAMETERS = {   # Paris
 #     "spatial_extent": {"west": 2.273, "south": 48.819, "east": 2.413, "north": 48.897},
 #     "temporal_extent": ["2018-01-01", "2023-12-31"],
 # }
-# PARAMETERS = {   # Torino
-#     "spatial_extent": {"west": 7.546, "south": 44.989, "east": 7.781, "north": 45.145},
-#     "temporal_extent": ["2018-01-01", "2023-12-31"],
-# }
+PARAMETERS = {   # Torino
+    "spatial_extent": {"west": 7.546, "south": 44.989, "east": 7.781, "north": 45.145},
+    "temporal_extent": ["2020-01-01", "2021-12-31"],
+}
 
 
 # ---------------------------------------------------------------------------
@@ -83,8 +83,7 @@ def run_uhi_udp(
 
     # Load the stored UDP and supply runtime parameter values
     cube = connection.datacube_from_process(
-        process_id=UDP_ID,
-        namespace="user",   # look in the authenticated user's saved processes
+        process_id=UDP_ID,  # look in the authenticated user's saved processes
         **parameters,
     )
 
