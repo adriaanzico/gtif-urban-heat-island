@@ -1,7 +1,7 @@
 {
   "type": "Feature",
   "stac_version": "1.0.0",
-  "id": "uhi-jja-openeo",
+  "id": "UHI_per_pixel",
   "conformsTo": [
     "https://api.openeo.org/1.2"
   ],
@@ -54,7 +54,7 @@
     },
     {
       "rel": "application",
-      "href": "https://openeo.dataspace.copernicus.eu/openeo/1.2/processes/uhi_jja",
+      "href": "https://openeo.dataspace.copernicus.eu/openeo/1.2/processes/u:776bee94-53de-49f5-88d6-c3660d927048/UHI_per_pixel",
       "type": "application/json",
       "title": "openEO UDP definition"
     },
