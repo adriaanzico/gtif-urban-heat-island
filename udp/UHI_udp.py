@@ -8,7 +8,7 @@ Usage
 -----
     python uhi_udp_register.py
 
-The UDP will be saved under the process id "uhi_jja" in your account.
+The UDP will be saved under the process id "UHI_per_pixel" in your account.
 """
 
 import numpy as np
