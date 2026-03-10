@@ -1,0 +1,26 @@
+[
+  {
+    "id": "UHI_per_pixel",
+    "type": "openeo",
+    "description": "Sen2like test",
+    "backend": "https://openeo.eodc.eu/openeo/1.2.0",
+    "process_graph": {
+      "ardsen2like": {
+        "process_id": "sen2like",
+        "namespace": "https://raw.githubusercontent.com/ESA-APEx/apex_algorithms/refs/heads/main/algorithm_catalog/eodc/sen2like/openeo_udp/sen2like.json",
+        "arguments": {
+          "spatial_extent": ["west": 7.546, "south": 44.989, "east": 7.781, "north": 45.145]
+          },
+          "temporal_extent": [
+            "2020-01-01", "2021-12-31"
+          ]
+        },
+        "result": true
+      }
+    },
+    "reference_data": {
+    },
+    "reference_options": {
+    }
+  }
+]
