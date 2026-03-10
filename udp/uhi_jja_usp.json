@@ -1,11 +1,11 @@
 {
   "description": "Computes per-pixel Urban Heat Island (UHI) intensity for a given area and time period using Landsat 8/9 TIRS Band 10 Land Surface Temperature (LST) and ESA CCI land cover.\n\nAlgorithm:\n  1. Load Landsat TIRS B10, convert to °C.\n  2. Aggregate to JJA (June-August) mean across all years in the      requested temporal extent.\n  3. Load ESA CCI land cover; resample to LST grid.\n  4. Separate urban (CCI=190) and rural pixels.\n  5. Compute local rural mean LST with a moving-window kernel.\n  6. UHI = LST_urban - local_rural_mean  (urban pixels only).\n",
-  "id": "uhi_jja",
+  "id": "UHI_per_pixel",
   "links": [
     {
-      "href": "https://openeo.dataspace.copernicus.eu/openeo/1.2/processes/u:9e5255f0-b55f-4d82-91c7-d6de770a9f3d/uhi_jja",
+      "href": "https://openeo.dataspace.copernicus.eu/openeo/1.2/processes/u:776bee94-53de-49f5-88d6-c3660d927048/UHI_per_pixel",
       "rel": "canonical",
-      "title": "Public URL for user-defined process 'uhi_jja'"
+      "title": "Public URL for user-defined process 'UHI_per_pixel'"
     }
   ],
   "parameters": [
@@ -103,8 +103,28 @@
       "name": "temporal_extent",
       "optional": true,
       "schema": {
+        "items": {
+          "anyOf": [
+            {
+              "format": "date-time",
+              "subtype": "date-time",
+              "type": "string"
+            },
+            {
+              "format": "date",
+              "subtype": "date",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "maxItems": 2,
+        "minItems": 2,
         "subtype": "temporal-interval",
-        "type": "array"
+        "type": "array",
+        "uniqueItems": true
       }
     },
     {
