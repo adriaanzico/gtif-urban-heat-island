@@ -51,18 +51,13 @@ PARAMETERS = {   # Torino
     "temporal_extent": ["2020-01-01", "2021-12-31"],
 }
 
-
-# ---------------------------------------------------------------------------
-# Run
-# ---------------------------------------------------------------------------
-
 def run_uhi_udp(
     parameters: dict = PARAMETERS,
     output_file: str = OUTPUT_FILE,
     job_title: str   = JOB_TITLE,
 ) -> openeo.BatchJob:
     """
-    Submit a batch job that runs the uhi_jja UDP and downloads the result.
+    Submit a batch job that runs the UHI_per_pixel UDP and downloads the result.
 
     Parameters
     ----------
@@ -83,7 +78,8 @@ def run_uhi_udp(
 
     # Load the stored UDP and supply runtime parameter values
     cube = connection.datacube_from_process(
-        process_id=UDP_ID,  # look in the authenticated user's saved processes
+        process_id=UDP_ID,
+        namespace=r'https://openeo.dataspace.copernicus.eu/openeo/1.2/processes/u:776bee94-53de-49f5-88d6-c3660d927048/UHI_per_pixel',
         **parameters,
     )
 
