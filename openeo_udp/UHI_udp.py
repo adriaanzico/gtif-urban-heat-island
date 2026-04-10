@@ -90,10 +90,7 @@ def build_uhi_graph(
         for y in range(YEAR_RANGE_START, YEAR_RANGE_END + 1)
     ]
 
-    lst = lst_raw.aggregate_temporal(
-        intervals=jja_intervals,
-        reducer="mean",
-    ).reduce_temporal(reducer="mean")
+    lst = lst_raw.aggregate_temporal(intervals=jja_intervals,reducer="mean").reduce_temporal(reducer="mean")
 
     # ------------------------------------------------------------------
     # 3.  Load ESA CCI land cover for the requested year

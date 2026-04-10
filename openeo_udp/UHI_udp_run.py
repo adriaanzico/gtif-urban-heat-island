@@ -38,8 +38,8 @@ UDP_ID     = "UHI_per_pixel"
 #     # To change it, update CCI_YEAR in uhi_udp_register.py and re-register.
 # }
 
-OUTPUT_FILE = r"C:\Users\adriaan.keurhorst\Documents\GTIF\uhi_jja_result_torino.tif"
-JOB_TITLE   = "UHI_JJA_torino"
+OUTPUT_FILE = r"C:\Users\adriaan.keurhorst\Documents\GTIF\uhi_jja_result_denhaag.tif"
+JOB_TITLE   = "UHI_JJA_DenHaag"
 
 # Uncomment for other cities:
 # PARAMETERS = {   # Paris
@@ -47,7 +47,7 @@ JOB_TITLE   = "UHI_JJA_torino"
 #     "temporal_extent": ["2018-01-01", "2023-12-31"],
 # }
 PARAMETERS = {   # Torino
-    "spatial_extent": {"west": 7.546, "south": 44.989, "east": 7.781, "north": 45.145},
+    "spatial_extent": {"west": 4.2276, "south": 52.0270, "east": 4.3953, "north": 52.1359},
     "temporal_extent": ["2020-01-01", "2021-12-31"],
 }
 
