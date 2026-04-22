@@ -31,5 +31,5 @@ s2_b8 = cube_s2.band('B08')
 s2_ndvi = (s2_b8 - s2_b4)/(s2_b8 + s2_b4)
 
 s2_ndvi = s2_ndvi.reduce_temporal(reducer='mean')
-s2_ndvi.download('test.tif')
+# s2_ndvi.download('test.tif')
 s2_ndvi.download(f'{output_folder}/ndvi_london_{temp_ex[0].split("-")[0]}_{temp_ex[0].split("-")[1]}.tif')
